@@ -1,31 +1,24 @@
-import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import UserContext from "./userContext";
-
-
 
 function Users() {
   const userContext = useContext(UserContext);
-  let handleDelete = (index) => {
-  let confirm = window.confirm("Do you want to delete?")
-    if(confirm){
-      userContext.userList.splice(index-1,1);
-      userContext.setUserList([...userContext.userList])
-
+  let handleDelete = index => {
+    let confirm = window.confirm("Do you want to delete?");
+    if (confirm) {
+      userContext.userList.splice(index - 1, 1);
+      userContext.setUserList([...userContext.userList]);
     }
-
-  }
+  };
   // console.log(userContext.userList.length)
- 
+
   return (
     <>
-   
       <h1 className="h3 mb-2 text-gray-800">Users</h1>
       <p className="mb-4">
         DataTables is a third party plugin that is used to generate the demo
         table below. For more information about DataTables, please visit the{" "}
-        
-        
       </p>
       <Link
         to="/create-user"
@@ -36,7 +29,9 @@ function Users() {
 
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>
+          <h6 className="m-0 font-weight-bold text-primary">
+            DataTables Example
+          </h6>
         </div>
         <div className="card-body">
           <div className="table-responsive">
@@ -48,7 +43,7 @@ function Users() {
             >
               <thead>
                 <tr>
-                <th>ID</th>
+                  <th>ID</th>
                   <th>Name</th>
                   <th>Position</th>
                   <th>Office</th>
@@ -71,27 +66,41 @@ function Users() {
                 </tr>
               </tfoot>
               <tbody>
-               {
-                 userContext.userList.length > 0 ? 
-                 userContext.userList.map((obj,index) => {
-                  return <tr>
-                  <td>{index + 1}</td>
-                  <td>{obj.userName}</td>
-                  <td>{obj.position}</td>
-                  <td>{obj.office}</td>
-                  <td>{obj.age}</td>
-                  <td>{obj.startDate}</td>
-                  <td>{obj.salary}</td>
-                  <td>
-                    <Link to={`/users/edit/${index + 1}`} classNameName="btn btn-sm btn-primary">Edit</Link>
-                    <button onClick={() => {handleDelete(index + 1)}} classNameName="btn btn-sm btn-danger">Delete</button>
-                  </td>
-                </tr>
-                 }) :
-                 <tr> 
-                   <td>No Users</td>
-                 </tr>
-               }
+                {userContext.userList.length > 0 ? (
+                  userContext.userList.map((obj, index) => {
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{obj.userName}</td>
+                        <td>{obj.position}</td>
+                        <td>{obj.office}</td>
+                        <td>{obj.age}</td>
+                        <td>{obj.startDate}</td>
+                        <td>{obj.salary}</td>
+                        <td>
+                          <Link
+                            to={`/users/edit/${index + 1}`}
+                            className="btn btn-sm btn-primary"
+                          >
+                            Edit
+                          </Link>
+                          <button
+                            onClick={() => {
+                              handleDelete(index + 1);
+                            }}
+                            className="btn btn-sm btn-danger"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td>No Users</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
