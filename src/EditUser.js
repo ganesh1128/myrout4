@@ -18,6 +18,7 @@ useEffect(() => {
    setAge(userData.age);
    setStartdate(userData.startDate);
    setSalary(userData.salary);
+    // eslint-disable-next-line
 }, [])
 
 
@@ -36,11 +37,11 @@ useEffect(() => {
   };
   return (
     <div>
-      {/* *****************************/} 
+      
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h6 class="h3 mb-0 text-gray-800">Create User</h6>
       </div>
-      {/* *****************************/} 
+      
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div className="row">
@@ -56,7 +57,7 @@ useEffect(() => {
                 className="form-control"
               />
             </div>
-            {/* *****************************/}
+           
             <div className="col-lg-6">
               <label>Position</label>
               <input
@@ -69,7 +70,7 @@ useEffect(() => {
               />
             </div>
 
-            {/* *****************************/}
+            
             <div className="col-lg-6">
               <label>Office</label>
               <input
@@ -81,7 +82,7 @@ useEffect(() => {
                 className="form-control"
               />
             </div>
-            {/* *****************************/}
+           
 
             <div className="col-lg-6">
               <label>Age</label>
@@ -94,7 +95,7 @@ useEffect(() => {
                 className="form-control"
               />
             </div>
-            {/* *****************************/}
+           
 
             <div className="col-lg-6">
               <label>Start Date</label>
@@ -107,7 +108,7 @@ useEffect(() => {
                 className="form-control"
               />
             </div>
-            {/* *****************************/}
+           
             <div className="col-lg-6">
               <label>Salary</label>
               <input
@@ -119,7 +120,7 @@ useEffect(() => {
                 className="form-control"
               />
             </div>
-            {/* *****************************/}
+           
             <div className="col-lg-12">
               <input
                 type="submit"
@@ -127,7 +128,7 @@ useEffect(() => {
                 className="btn btn-primary mt-3"
               />
             </div>
-            {/* *****************************/}
+           
           </div>
         </form>
       </div>

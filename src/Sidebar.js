@@ -33,12 +33,7 @@ function Sidebar() {
           <span>Users</span>
         </Link>
       </li>
-      {/* <li className="nav-item">
-        <Link className="nav-link collapsed" to="/Product">
-          <i className="fas fa-fw fa-wrench"></i>
-          <span>Products</span>
-        </Link>
-      </li> */}
+      
       <hr className="sidebar-divider" />
     </ul>
   );

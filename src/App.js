@@ -3,13 +3,10 @@ import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import Dashboard from "./Dashboard";
 import Users from "./Users";
-// import Product from "./Product";
 import CreateUser from "./CreateUser";
-// import ProductCreate from "./product-create";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import EditUser from "./EditUser";
 import { UserProvider } from "./userContext";
-// import ProductEdit from "./product-edit";
 
 function App() {
   return (
@@ -22,17 +19,6 @@ function App() {
             <div class="container-fluid">
               <Switch>
                 <Route path="/" component={Dashboard} exact={true} />
-                {/* <Route path="/product" component={Product} exact={true} /> */}
-                {/* <Route
-                  path="/product-create"
-                  component={ProductCreate}
-                  exact={true}
-                /> */}
-                {/* <Route
-                  path="/product/edit/:id"
-                  component={ProductEdit}
-                  exact={true}
-                /> */}
                 <UserProvider>
                   <Route path="/users" component={Users} exact={true} />
                   <Route
